@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+:root {
+  --flex-display-- : flex;
+}
 
 .app {
   max-width: 1300px;
@@ -10,96 +13,7 @@
   padding: 5px 1rem;
 }
 
-.logo-text {
-  font-family: "JetBrains Mono", monospace;
-  font-weight: 800;
-  margin-bottom: 3rem;
-}
 
-.dir {
-  height: 2rem;
-  display: flex;
-  align-items: center;
-}
 
-.dir > .border {
-  width: 25%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-}
 
-.dir > .item {
-  padding-left: 3rem;
-  font-weight: 500;
-}
 
-.dir > .item .item__link {
-  text-decoration: none;
-  font-size: 1.1rem;
-  color: rgba(0, 0, 0, 0.6);
-
-  display: inline-flex;
-  align-items: center;
-}
-
-.dir > .item .item__icon {
-  padding-right: 6px;
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.app > .msg {
-  padding: 3rem;
-  font-family: "Cabin", "Padauk", sans-serif;
-  font-size: 3rem;
-  line-height: 3rem;
-  letter-spacing: 2px;
-}
-
-.app > .msg > p {
-  margin-bottom: 0.7rem;
-}
-
-.app > .msg > p > span {
-  letter-spacing: 1px;
-  color: rgba(80, 80, 110, 0.7);
-}
-
-.app > .cover {
-  font-family: "Cabin", "Padauk", sans-serif;
-}
-
-.app > .cover > .cover__img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.app > .cover__tech {
-  padding: 6rem 0;
-  padding-left: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.cover__tech > .title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.cover__tech > .stacks {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.cover__tech > .stacks > .stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cover__tech > .stacks > .stack > .styled-icons {
-  height: 5rem;
-  margin-bottom: 1rem;
-}

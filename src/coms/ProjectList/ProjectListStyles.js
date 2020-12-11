@@ -23,8 +23,6 @@ const rightBoxShadow = css`
 
 //! styled
 export const Wrapper = styled.div`
-	/* height: 50vh; */
-	/* width: 100%; */
 	padding: 2rem;
 	display: flex;
 	justify-content: space-between;
