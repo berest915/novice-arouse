@@ -5,18 +5,9 @@
 }
 
 .app {
-  height: 300vh;
-  padding: 8vh 8vw 0 8vw;
-}
-
-.app__header {
   max-width: 1300px;
   margin: 0 auto;
   padding: 5px 1rem;
-}
-
-.header__content {
-  position: relative;
 }
 
 .logo-text {
@@ -56,7 +47,7 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
-.header__content > .msg {
+.app > .msg {
   padding: 3rem;
   font-family: "Cabin", "Padauk", sans-serif;
   font-size: 3rem;
@@ -64,26 +55,26 @@
   letter-spacing: 2px;
 }
 
-.header__content > .msg > p {
+.app > .msg > p {
   margin-bottom: 0.7rem;
 }
 
-.header__content > .msg > p > span {
+.app > .msg > p > span {
   letter-spacing: 1px;
   color: rgba(80, 80, 110, 0.7);
 }
 
-.header__content > .cover {
+.app > .cover {
   font-family: "Cabin", "Padauk", sans-serif;
 }
 
-.header__content > .cover > .cover__img {
+.app > .cover > .cover__img {
   width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
-.header__content > .cover > .cover__tech {
+.app > .cover__tech {
   padding: 6rem 0;
   padding-left: 2rem;
   display: flex;

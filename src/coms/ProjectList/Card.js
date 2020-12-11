@@ -10,9 +10,9 @@ const Card = ({ card }) => {
 			</ImageDiv>
 			
 			<ContentDiv className='w-46 '>
-				<h2 className='h'>{title}</h2>
+				<h2 className='title'>{title}</h2>
 				<p>{p}</p>
-				<h5 className='h'>{stack}</h5>
+				<h4 className='stack'>{stack}</h4>
 				<div className='card-link'>
 					<a target='_blank' href={demoUrl} rel='noopener noreferrer'>
 						<i style={{ marginRight: '8px' }} className='fas fa-desktop'></i>

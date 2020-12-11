@@ -1,20 +1,18 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import coverImg from "./img/cover-img.jpg";
-import {
-  StyledComponents,
-  ReactLogo,
-  Firebase,
-  Github,
-} from "@styled-icons/simple-icons";
 import ProjectList from "./coms/ProjectList/ProjectList";
+import TechStack from "./coms/TechStack/TechStack";
+import {
+  currentTechStackProps,
+  furtherTechStackProps,
+} from "./coms/TechStack/TechStackProps";
 
 const App = () => {
   return (
     <>
-      <div className="app">
-        <div className="app__header">
-          <div className="header__content">
+      <div style={{ padding: "8vh 8vw 0 8vw" }}>
+        <div className="app">
             <div className="logo-text">
               <p>SAn</p>
               <p>LEOW</p>
@@ -59,32 +57,22 @@ const App = () => {
             {/* cover-img */}
             <div className="cover">
               <img src={coverImg} className="cover__img" />
-              <div className="cover__tech">
-                <p className="title">My Current Tech Stack</p>
-                <div className="stacks">
-                  <p className="stack">
-                    <ReactLogo className="styled-icons" />
-                    <span>ReactJs</span>
-                  </p>
-                  <p className="stack">
-                    <StyledComponents className="styled-icons" />
-                    <span>Styled-Components</span>
-                  </p>
-                  <p className="stack">
-                    <Firebase className="styled-icons" />
-                    <span>Firebase</span>
-                  </p>
-                  <p className="stack">
-                    <Github className="styled-icons" />
-                    <span>Github</span>
-                  </p>
-                </div>
-              </div>
             </div>
 
-            {/*  */}
+            {/* current tech-stack */}
+            <TechStack
+              title="My Current Tech Stack"
+              techStackProps={currentTechStackProps}
+            />
+
+            {/* projects */}
             <ProjectList />
-          </div>
+
+            {/* current tech-stack */}
+            <TechStack
+              title="My Further Tech Stack"
+              techStackProps={furtherTechStackProps}
+            />
         </div>
       </div>
     </>
