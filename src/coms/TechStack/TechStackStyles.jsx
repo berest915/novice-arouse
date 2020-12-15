@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   padding: 6rem 0;
   display: flex;
   flex-direction: column;
-
+  font-family: "Cabin", sans-serif;
   .title {
     font-size: 2rem;
     text-align: center;

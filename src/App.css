@@ -4,16 +4,17 @@
   padding: 0;
 }
 :root {
-  --flex-display-- : flex;
+  --flex-display--: flex;
 }
 
 .app {
+  padding: 8vh 8vw 0 8vw;
+  background-color: rgba(194, 223, 255, 0.4);
+}
+
+.app__body {
   max-width: 1300px;
   margin: 0 auto;
   padding: 5px 1rem;
+  position: relative;
 }
-
-
-
-
-

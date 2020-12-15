@@ -7,13 +7,11 @@ const TechStack = ({ title, techStackProps }) => {
       <Wrapper>
         <p className="title">{title}</p>
         <div className="stacks">
-          {techStackProps.map(stack => (
-            <>
-              <p className="stack">
-                <stack.StackIcon className="styled-icons"/>
-                <span>{stack.stackName}</span>
-              </p>
-            </>
+          {techStackProps.map((stack, index) => (
+            <p className="stack" key={index}>
+              <stack.StackIcon className="styled-icons" />
+              <span>{stack.stackName}</span>
+            </p>
           ))}
         </div>
       </Wrapper>
