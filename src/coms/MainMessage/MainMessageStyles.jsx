@@ -48,6 +48,7 @@ export const Wrapper = styled.div`
 
   @media (max-width: 450px){
     .msg{
+      padding: 2rem 5%;
       font-size: 1.1rem;
       p{
         margin-bottom: 0;
