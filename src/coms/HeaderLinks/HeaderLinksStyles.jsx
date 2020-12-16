@@ -69,29 +69,44 @@ export const Wrapper = styled.div`
       }
     }
   }
-  
+
   @media (max-width: 460px) {
     .dir {
+
       .border {
         width: 0;
       }
+
       .items {
         flex-direction: column;
         width: 100%;
+
         .item {
           padding: 0;
-          a {
-            padding: 10px 30px;
 
+          .item__link {
+            padding: 10px 30px;
             border: 1px solid silver;
             width: 100%;
             margin: 8px auto;
             display: flex;
-            i {
+
+            :hover {
+              transition: all 0.4s ease;
+              background-color: #59619b;
+              color: #c2dfff;
+            }
+
+            .item__icon {
               flex: 1;
               padding: 0 25px;
+              
+              :hover{
+                 color: #c2dfff;
+              }
             }
-            span {
+            
+            .item__text {
               flex: 3;
             }
           }

@@ -1,59 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import { Wrapper } from "./ContactUsStyles";
 import emailjs from "emailjs-com";
-
+import Button from "@material-ui/core/Button";
 const ContactUs = () => {
+  const [input, setInput] = useState({
+    from_name: "",
+    from_email: "",
+    from_message: "",
+  });
+
+  const [isInputEmpty, setIsInputEmpty] = useState(false);
+
+  const handleOnChange = e => {
+    setInput({
+      ...input,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const sendEmail = e => {
     e.preventDefault();
-    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
-    emailjs
-      .sendForm(
-        "service_ot987ky",
-        "template_2hz48mt",
-        e.target,
-        "user_Xg4G1M9ikFachf4iaOQ6Y"
-      )
-      .then(
-        result => {
-          console.log(result.text);
-        },
-        error => {
-          console.log(error.text);
-        }
-      );
+    if (
+      input.from_name === "" ||
+      input.from_email === "" ||
+      input.from_message === ""
+    ) {
+      setIsInputEmpty(true)
+      setTimeout(() => {
+        setIsInputEmpty(false)
+      }, 3000);
+    } else {
+      // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+      emailjs
+        .sendForm(
+          "service_ot987ky",
+          "template_2hz48mt",
+          e.target,
+          "user_Xg4G1M9ikFachf4iaOQ6Y"
+        )
+        .then(
+          result => {
+            console.log(result.text);
+          },
+          error => {
+            console.log(error.text);
+          }
+        );
+    }
   };
 
   return (
     <>
       <Wrapper>
-        <h1>Contact Me</h1>
+        <h1>
+          Contact Me
+          <i className="fas fa-mobile-alt" />
+        </h1>
         <form className="contact-form" onSubmit={sendEmail}>
           <div className="eachInput">
             <input type="hidden" name="to_name" value="San" />
           </div>
+
           <div className="eachInput">
             <label>Name :</label>
             <input
-              placeholder="How should I address you?"
+              className={isInputEmpty && `error-border`}
+              placeholder="How should I address you ?"
               type="text"
               name="from_name"
+              value={input.from_name}
+              onChange={handleOnChange}
             />
           </div>
 
           <div className="eachInput">
             <label>Email :</label>
             <input
+              className={isInputEmpty && `error-border`}
               placeholder="Kindly provide your email."
               type="email"
               name="from_email"
+              value={input.from_email}
+              onChange={handleOnChange}
             />
           </div>
 
           <div className="eachInput">
             <label>Message :</label>
             <textarea
+              className={isInputEmpty && `error-border`}
               placeholder="Enter your message here."
               name="from_message"
+              value={input.from_message}
+              onChange={handleOnChange}
             />
           </div>
 
@@ -64,7 +103,13 @@ const ContactUs = () => {
                 data-sitekey="6LcdiQYaAAAAAJM56lJqJ1KBjRkbxezFi7Pz2F-a"
               />
             </div>
-            <button className="send-btn" type="submit" >Send</button>
+            <div className="caption">
+              - - - click on recaptcha before sending - - -
+            </div>
+            <Button className="send-btn" type="submit">
+              <i className="far fa-paper-plane" />
+              Send
+            </Button>
           </div>
         </form>
       </Wrapper>

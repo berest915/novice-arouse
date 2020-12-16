@@ -23,4 +23,8 @@ const Wrapper = styled.div`
   text-align: right;
   letter-spacing: 1px;
   text-align: ${props => props.textAlign};
+
+  @media (max-width: 460px){
+    font-size: .8rem;text-align:center;
+  }
 `;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  padding: 6rem 0;
+  margin: 6rem 0;
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
@@ -16,11 +16,13 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
+    flex-wrap: wrap;
     .stack {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 20px 40px;
+
 
       .styled-icons {
         height: 5rem;
@@ -30,22 +32,19 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 700px) {
-    padding: 4rem 0;
+    margin: 4rem 0;
     transition: all 0.4s ease;
     .title {
       margin-bottom: 2rem;
     }
-    .stacks {
-      flex-wrap: wrap;
-
-      .stack {
+    .stacks > .stack {
         padding: 0;
         width: 40%;
-        height: 120px;
+        height: 100%;
         margin: 10px;
       }
     }
-  }
+  
 
   @media (max-width: 500px) {
     .title {
@@ -55,6 +54,10 @@ export const Wrapper = styled.div`
     .stacks > .stack {
       width: 80%;
       border-bottom: 1px solid silver;
+
+      span {
+        margin-bottom: 1.5rem;
+      }
     }
   }
 `;

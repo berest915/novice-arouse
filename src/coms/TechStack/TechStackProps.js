@@ -3,6 +3,7 @@ import {
   ReactLogo,
   Firebase,
   Github,
+  Mongodb,
   Auth0,
   Amazonaws,
   Typescript,
@@ -36,6 +37,10 @@ export const furtherTechStackProps = [
   {
     StackIcon: NodeJs,
     stackName: "NodeJS (ExpressJS)",
+  },
+  {
+    StackIcon: Mongodb,
+    stackName: "Mongodb",
   },
   {
     StackIcon: ReactLogo,
