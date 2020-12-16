@@ -9,26 +9,45 @@ const ContactUs = () => {
     from_message: "",
   });
 
-  const [isInputEmpty, setIsInputEmpty] = useState(false);
+  // const [errorBorder, setErrorBorder] = useState({
+  //   nameErrorBorder: false,
+  //   emailErrorBorder: false,
+  //   messageErrorBorder: false,
+  // });
+  const [nameErrorBorder, setNameErrorBorder] = useState(false)
+  const [emailErrorBorder, setEmailErrorBorder] = useState(false)
+  const [messageErrorBorder, setMessageErrorBorder] = useState(false)
 
   const handleOnChange = e => {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
+    if(e.target.value !== ""){
+      switch(e.target.name){
+        case "from_name":
+          return setNameErrorBorder(false);
+        case "from_email":
+          return setEmailErrorBorder(false);
+        case "from_message":
+          return setMessageErrorBorder(false);
+        default:
+          return ``;
+      }
+    }
   };
 
   const sendEmail = e => {
     e.preventDefault();
-    if (
-      input.from_name === "" ||
-      input.from_email === "" ||
-      input.from_message === ""
-    ) {
-      setIsInputEmpty(true)
-      setTimeout(() => {
-        setIsInputEmpty(false)
-      }, 3000);
+    if (!input.from_name || !input.from_email || !input.from_message) {
+      !input.from_name && setNameErrorBorder(true)
+      !input.from_email && setEmailErrorBorder(true)
+      !input.from_message && setMessageErrorBorder(true)
+      // setTimeout(() => {
+      //   setEmailErrorBorder(false)
+      //   setNameErrorBorder(false)
+      //   setMessageErrorBorder(false)
+      // }, 3000);
     } else {
       // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
       emailjs
@@ -41,6 +60,7 @@ const ContactUs = () => {
         .then(
           result => {
             console.log(result.text);
+          
           },
           error => {
             console.log(error.text);
@@ -51,7 +71,11 @@ const ContactUs = () => {
 
   return (
     <>
-      <Wrapper>
+      <Wrapper
+        nameErrorBorder={nameErrorBorder}
+        emailErrorBorder={emailErrorBorder}
+        messageErrorBorder={messageErrorBorder}
+      >
         <h1>
           Contact Me
           <i className="fas fa-mobile-alt" />
@@ -64,7 +88,7 @@ const ContactUs = () => {
           <div className="eachInput">
             <label>Name :</label>
             <input
-              className={isInputEmpty && `error-border`}
+              className="input-name"
               placeholder="How should I address you ?"
               type="text"
               name="from_name"
@@ -76,7 +100,7 @@ const ContactUs = () => {
           <div className="eachInput">
             <label>Email :</label>
             <input
-              className={isInputEmpty && `error-border`}
+              className="input-email"
               placeholder="Kindly provide your email."
               type="email"
               name="from_email"
@@ -88,7 +112,7 @@ const ContactUs = () => {
           <div className="eachInput">
             <label>Message :</label>
             <textarea
-              className={isInputEmpty && `error-border`}
+              className="input-message"
               placeholder="Enter your message here."
               name="from_message"
               value={input.from_message}

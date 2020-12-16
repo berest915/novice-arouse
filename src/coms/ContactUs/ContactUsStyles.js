@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: rgba(194, 223, 255, 0.2);
+  
   padding: 50px 0;
   width: 90%;
   max-width: 800px;
@@ -85,9 +86,19 @@ export const Wrapper = styled.div`
         }
       }
 
-      .error-border {
-        border: 1px solid red;
+      .input-name {
+        border: ${props => props.nameErrorBorder ? `1px solid red`:`1px solid silver`};
+        transition: border 0.4s ease;
       }
+      .input-email {
+        border: ${props => props.emailErrorBorder ? `1px solid red`:`1px solid silver`};
+        transition: border 0.4s ease;
+      }
+      .input-message {
+        border: ${props => props.messageErrorBorder ? `1px solid red`:`1px solid silver`};
+        transition: border 0.4s ease;
+      }
+ 
 
       
     }
