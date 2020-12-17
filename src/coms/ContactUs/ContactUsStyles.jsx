@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   background-color: rgba(194, 223, 255, 0.2);
-  
   padding: 50px 0;
   width: 90%;
   max-width: 800px;
@@ -20,10 +19,10 @@ export const Wrapper = styled.div`
     i {
       padding-left: 1rem;
       opacity: 0.8;
-      transform: rotate(-5deg);
+      transform: rotate(15deg);
       transition: transform 0.4s ease;
       :hover {
-        transform: rotate(5deg);
+        transform: rotate(0deg);
       }
     }
   }
@@ -56,8 +55,6 @@ export const Wrapper = styled.div`
         border: 1px solid silver;
         border-radius: 5px;
         padding: 8px 16px;
-
-        
       }
 
       textarea {
@@ -86,29 +83,31 @@ export const Wrapper = styled.div`
         }
       }
 
-      .input-name {
-        border: ${props => props.nameErrorBorder ? `1px solid red`:`1px solid silver`};
+      .ifEmpty-name {
+        border: ${props =>
+          props.nameErrorBorder ? `1px solid red` : `1px solid silver`};
         transition: border 0.4s ease;
       }
-      .input-email {
-        border: ${props => props.emailErrorBorder ? `1px solid red`:`1px solid silver`};
-        transition: border 0.4s ease;
-      }
-      .input-message {
-        border: ${props => props.messageErrorBorder ? `1px solid red`:`1px solid silver`};
-        transition: border 0.4s ease;
-      }
- 
 
-      
+      .ifEmpty-email {
+        border: ${props =>
+          props.emailErrorBorder ? `1px solid red` : `1px solid silver`};
+        transition: border 0.4s ease;
+      }
+
+      .ifEmpty-message {
+        border: ${props =>
+          props.messageErrorBorder ? `1px solid red` : `1px solid silver`};
+        transition: border 0.4s ease;
+      }
     }
 
     .submit-criteria {
       display: flex;
       flex-direction: column;
+      transition: all 2s ease;
+
       .recaptcha-container {
-        /* padding-left: 20%; */
-        /* width: 100%; */
         margin: 0.5rem auto;
       }
 
@@ -123,12 +122,12 @@ export const Wrapper = styled.div`
         color: #42618a;
         font-family: "cabin", "san-serif";
         border: 1px solid rgba(194, 223, 255, 0.4);
-        /* outline: none; */
         border-radius: 1rem;
         font-size: 1.2rem;
         text-transform: uppercase;
         margin: 0.5rem 1rem;
         transition: all 0.4s ease;
+
         i {
           margin-right: 1rem;
         }
@@ -150,20 +149,21 @@ export const Wrapper = styled.div`
         text-align: center;
         text-transform: uppercase;
       }
+
+      .ifEmpty-recaptcha {
+        color: ${props => props.recaptchaErrorBorder && `orange`};
+        transition: all 2s ease;
+      }
     }
   }
+
   @media (max-width: 900px) {
-    h1 {
-      text-align: left;
-      width: 70%;
-      margin: 0 auto;
-      margin-bottom: 0.5rem;
-    }
     .contact-form {
       .eachInput {
         flex-direction: column;
         margin: 0;
         width: 100%;
+
         label,
         input,
         textarea {
@@ -174,6 +174,18 @@ export const Wrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 700px) {
+    padding: 30px 0;
+
+    h1 {
+      text-align: left;
+      width: 70%;
+      margin: 0 auto;
+      margin-bottom: 0.5rem;
+    }
+  }
+
   @media (max-width: 560px) {
     .contact-form {
       .submit-criteria {
@@ -183,6 +195,7 @@ export const Wrapper = styled.div`
           text-align: left;
           margin-left: 0;
         }
+
         .send-btn {
           margin-left: 0;
           font-size: 1rem;
@@ -190,6 +203,7 @@ export const Wrapper = styled.div`
         }
       }
     }
+
     .g-recaptcha {
       transition: transform 0.4s ease;
       transform: scale(0.9);
@@ -198,14 +212,15 @@ export const Wrapper = styled.div`
       -webkit-transform-origin: 0 0;
     }
   }
+
   @media (max-width: 520px) {
     .g-recaptcha {
       transform: scale(0.8);
       -webkit-transform: scale(0.8);
     }
   }
+
   @media (max-width: 460px) {
-    padding: 30px 0;
     .contact-form {
       .submit-criteria {
         .caption {
@@ -214,9 +229,11 @@ export const Wrapper = styled.div`
         }
       }
     }
+
     h1 {
       font-size: 1.5rem;
     }
+
     .contact-form {
       label,
       input,
@@ -224,17 +241,20 @@ export const Wrapper = styled.div`
         font-size: 0.8rem;
       }
     }
+
     .g-recaptcha {
       transform: scale(0.7);
       -webkit-transform: scale(0.7);
     }
   }
+
   @media (max-width: 410px) {
     .g-recaptcha {
       transform: scale(0.6);
       -webkit-transform: scale(0.6);
     }
   }
+
   @media (max-width: 360px) {
     .contact-form {
       input,
@@ -242,6 +262,5 @@ export const Wrapper = styled.div`
         font-size: 0.7rem;
       }
     }
-   
   }
 `;

@@ -14,25 +14,29 @@ export const Wrapper = styled.div`
 
     .items {
       display: flex;
-    }
 
-    .items > .item {
-      padding-left: 3rem;
-      font-weight: 500;
+      .item {
+        letter-spacing: 1px;
+        margin-left: 3rem;
+        font-weight: 500;
+        .item__link {
+          text-decoration: none;
+          font-size: 1.1rem;
 
-      .item__link {
-        text-decoration: none;
-        font-size: 1.1rem;
-        color: rgba(0, 0, 0, 0.6);
+          display: inline-flex;
+          align-items: center;
 
-        display: inline-flex;
-        align-items: center;
-      }
+          :hover {
+            color: black;
+            transform: scale(1.05);
+            transition: all 0.4s ease;
+          }
+        }
 
-      .item__icon {
-        padding-right: 6px;
-        font-size: 1.5rem;
-        color: rgba(0, 0, 0, 0.5);
+        .item__icon {
+          padding-right: 6px;
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -72,7 +76,6 @@ export const Wrapper = styled.div`
 
   @media (max-width: 460px) {
     .dir {
-
       .border {
         width: 0;
       }
@@ -83,10 +86,10 @@ export const Wrapper = styled.div`
 
         .item {
           padding: 0;
-
+          margin: 0;
           .item__link {
             padding: 10px 30px;
-            border: 1px solid silver;
+            border: 1px solid #59619b;
             width: 100%;
             margin: 8px auto;
             display: flex;
@@ -100,12 +103,12 @@ export const Wrapper = styled.div`
             .item__icon {
               flex: 1;
               padding: 0 25px;
-              
-              :hover{
-                 color: #c2dfff;
+
+              :hover {
+                color: #c2dfff;
               }
             }
-            
+
             .item__text {
               flex: 3;
             }

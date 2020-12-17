@@ -59,11 +59,11 @@ export const ContentDiv = styled.div`
   font-weight: 500;
   text-align: justify;
   .title {
-		font-size: 1.4rem;
-		font-weight: bold;
+    font-size: 1.4rem;
+    font-weight: bold;
     margin: 1rem 0;
-		text-transform: uppercase;
-		transition: font-size 0.4s ease;
+    text-transform: uppercase;
+    transition: font-size 0.4s ease;
   }
 
   .stack {
@@ -76,15 +76,20 @@ export const ContentDiv = styled.div`
   .card-link {
     display: flex;
     justify-content: space-between;
-		width: 50%;
-		transition: width 0.4s ease;
+    width: 60%;
+    transition: width 0.4s ease;
 
     a {
       color: #59619b;
       text-decoration: none;
-
+      transition: all 0.4s ease;
+      padding: 5px 12px;
       .link-icon {
         margin-right: 8px;
+      }
+      :hover {
+        background-color: #59619b;
+        color: #c2dfff;
       }
     }
   }
@@ -95,35 +100,35 @@ export const ContentDiv = styled.div`
     }
   }
   @media (max-width: 460px) {
-		.title {
-			transition: font-size 0.4s ease;
-			font-size: 1.2rem;
-			text-align: center;
-		}
+    .title {
+      transition: font-size 0.4s ease;
+      font-size: 1.2rem;
+      text-align: center;
+    }
     .card-link {
       width: 100%;
     }
-	}
-	@media (max-width: 380px) {
-		.description {
-			display: none;
-		}
-	}
-  @media (max-width: 330px) {
-    .card-link {
-			flex-direction: column;
-			text-align:center;
-			a{
-				margin: 0.5rem 0;
-				padding: 0.5rem 1rem;
-				border: 1px solid silver;
+  }
+  @media (max-width: 380px) {
+    .description {
+      display: none;
+    }
 
-				:hover{
-					transition: all 0.4s ease;
-					background-color: #59619b;
-					color: #c2dfff;
-				}
-			}
+    .card-link {
+      flex-direction: column;
+      text-align: center;
+      
+      a {
+        margin: 0.5rem 0;
+        padding: 0.5rem 1rem;
+        border: 1px solid silver;
+
+        :hover {
+          transition: all 0.4s ease;
+          background-color: #59619b;
+          color: #c2dfff;
+        }
+      }
     }
   }
 `;

@@ -9,22 +9,18 @@ const ContactUs = () => {
     from_message: "",
   });
 
-  // const [errorBorder, setErrorBorder] = useState({
-  //   nameErrorBorder: false,
-  //   emailErrorBorder: false,
-  //   messageErrorBorder: false,
-  // });
-  const [nameErrorBorder, setNameErrorBorder] = useState(false)
-  const [emailErrorBorder, setEmailErrorBorder] = useState(false)
-  const [messageErrorBorder, setMessageErrorBorder] = useState(false)
+  const [nameErrorBorder, setNameErrorBorder] = useState(false);
+  const [emailErrorBorder, setEmailErrorBorder] = useState(false);
+  const [messageErrorBorder, setMessageErrorBorder] = useState(false);
+  const [recaptchaErrorBorder, setRecaptchaErrorBorder] = useState(false)
 
   const handleOnChange = e => {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
-    if(e.target.value !== ""){
-      switch(e.target.name){
+    if (e.target.value !== "") {
+      switch (e.target.name) {
         case "from_name":
           return setNameErrorBorder(false);
         case "from_email":
@@ -40,16 +36,12 @@ const ContactUs = () => {
   const sendEmail = e => {
     e.preventDefault();
     if (!input.from_name || !input.from_email || !input.from_message) {
-      !input.from_name && setNameErrorBorder(true)
-      !input.from_email && setEmailErrorBorder(true)
-      !input.from_message && setMessageErrorBorder(true)
-      // setTimeout(() => {
-      //   setEmailErrorBorder(false)
-      //   setNameErrorBorder(false)
-      //   setMessageErrorBorder(false)
-      // }, 3000);
+      !input.from_name && setNameErrorBorder(true);
+      !input.from_email && setEmailErrorBorder(true);
+      !input.from_message && setMessageErrorBorder(true);
     } else {
       // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+      
       emailjs
         .sendForm(
           "service_ot987ky",
@@ -59,10 +51,11 @@ const ContactUs = () => {
         )
         .then(
           result => {
+            setRecaptchaErrorBorder(false)
             console.log(result.text);
-          
           },
           error => {
+            setRecaptchaErrorBorder(true)
             console.log(error.text);
           }
         );
@@ -75,6 +68,7 @@ const ContactUs = () => {
         nameErrorBorder={nameErrorBorder}
         emailErrorBorder={emailErrorBorder}
         messageErrorBorder={messageErrorBorder}
+        recaptchaErrorBorder={recaptchaErrorBorder}
       >
         <h1>
           Contact Me
@@ -88,7 +82,7 @@ const ContactUs = () => {
           <div className="eachInput">
             <label>Name :</label>
             <input
-              className="input-name"
+              className="ifEmpty-name"
               placeholder="How should I address you ?"
               type="text"
               name="from_name"
@@ -100,7 +94,7 @@ const ContactUs = () => {
           <div className="eachInput">
             <label>Email :</label>
             <input
-              className="input-email"
+              className="ifEmpty-email"
               placeholder="Kindly provide your email."
               type="email"
               name="from_email"
@@ -112,7 +106,7 @@ const ContactUs = () => {
           <div className="eachInput">
             <label>Message :</label>
             <textarea
-              className="input-message"
+              className="ifEmpty-message"
               placeholder="Enter your message here."
               name="from_message"
               value={input.from_message}
@@ -122,13 +116,13 @@ const ContactUs = () => {
 
           <div className="submit-criteria">
             <div className="recaptcha-container">
-              <div
+              <div  
                 className="g-recaptcha"
                 data-sitekey="6LcdiQYaAAAAAJM56lJqJ1KBjRkbxezFi7Pz2F-a"
               />
             </div>
-            <div className="caption">
-              - - - click on recaptcha before sending - - -
+            <div className="caption ifEmpty-recaptcha">
+              - - click on recaptcha before sending - -
             </div>
             <Button className="send-btn" type="submit">
               <i className="far fa-paper-plane" />
