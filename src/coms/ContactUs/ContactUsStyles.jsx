@@ -152,7 +152,7 @@ export const Wrapper = styled.div`
 
       .ifEmpty-recaptcha {
         color: ${props => props.recaptchaErrorBorder && `orange`};
-        transition: all 2s ease;
+        transition: all 1s ease;
       }
     }
   }
@@ -192,7 +192,6 @@ export const Wrapper = styled.div`
         .caption {
           transition: font-size 0.4s ease;
           font-size: 10px;
-          text-align: left;
           margin-left: 0;
         }
 
@@ -221,15 +220,7 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 460px) {
-    .contact-form {
-      .submit-criteria {
-        .caption {
-          transition: font-size 0.4s ease;
-          font-size: 8px;
-        }
-      }
-    }
-
+    margin: 0 auto;
     h1 {
       font-size: 1.5rem;
     }

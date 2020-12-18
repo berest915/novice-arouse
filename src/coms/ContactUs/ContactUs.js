@@ -12,7 +12,11 @@ const ContactUs = () => {
   const [nameErrorBorder, setNameErrorBorder] = useState(false);
   const [emailErrorBorder, setEmailErrorBorder] = useState(false);
   const [messageErrorBorder, setMessageErrorBorder] = useState(false);
-  const [recaptchaErrorBorder, setRecaptchaErrorBorder] = useState(false)
+  const [recaptchaErrorBorder, setRecaptchaErrorBorder] = useState(false);
+
+  const [captionText, setCaptionText] = useState(
+    "- - click on recaptcha before sending - -"
+  );
 
   const handleOnChange = e => {
     setInput({
@@ -40,23 +44,34 @@ const ContactUs = () => {
       !input.from_email && setEmailErrorBorder(true);
       !input.from_message && setMessageErrorBorder(true);
     } else {
+      setInput({
+        from_name: "",
+        from_email: "",
+        from_message: "",
+      });
       // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
-      
+      // 1 minute window on expired-or-duplicated validation
       emailjs
         .sendForm(
           "service_ot987ky",
           "template_2hz48mt",
           e.target,
-          "user_Xg4G1M9ikFachf4iaOQ6Y"
+          "user_Xg4G1M9ikFachf4iaOQ6Y",
+          // pass in additional custom-callback
+          setRecaptchaErrorBorder(),
+          setCaptionText()
         )
         .then(
           result => {
-            setRecaptchaErrorBorder(false)
+            setRecaptchaErrorBorder(false);
             console.log(result.text);
           },
           error => {
-            setRecaptchaErrorBorder(true)
+            setRecaptchaErrorBorder(true);
             console.log(error.text);
+            error.text === "timeout-or-duplicate" && setCaptionText("wait 1 minute before resending");
+            error.text === "The g-recaptcha-response parameter not found" &&
+              setCaptionText("- - click on recaptcha before sending - -");
           }
         );
     }
@@ -96,7 +111,7 @@ const ContactUs = () => {
             <input
               className="ifEmpty-email"
               placeholder="Kindly provide your email."
-              type="email"
+              // type="email"
               name="from_email"
               value={input.from_email}
               onChange={handleOnChange}
@@ -116,14 +131,12 @@ const ContactUs = () => {
 
           <div className="submit-criteria">
             <div className="recaptcha-container">
-              <div  
+              <div
                 className="g-recaptcha"
                 data-sitekey="6LcdiQYaAAAAAJM56lJqJ1KBjRkbxezFi7Pz2F-a"
               />
             </div>
-            <div className="caption ifEmpty-recaptcha">
-              - - click on recaptcha before sending - -
-            </div>
+            <div className="caption ifEmpty-recaptcha">{captionText}</div>
             <Button className="send-btn" type="submit">
               <i className="far fa-paper-plane" />
               Send

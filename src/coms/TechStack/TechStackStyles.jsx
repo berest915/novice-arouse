@@ -60,4 +60,10 @@ export const Wrapper = styled.div`
       }
     }
   }
+
+  @media (max-width: 380px) {
+    .title{
+      font-size: 1.2rem;
+    }
+  }
 `;

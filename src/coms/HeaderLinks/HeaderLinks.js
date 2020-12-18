@@ -20,12 +20,6 @@ const HeaderLinks = () => {
                 <span className="item__text">Resume</span>
               </a>
             </div>
-            {/* <div className="item">
-              <a href="#" className="item__link">
-                <i className="item__icon far fa-paper-plane" />
-                <span className="item__text">Contact</span>
-              </a>
-            </div> */}
           </div>
         </div>
       </Wrapper>

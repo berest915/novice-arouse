@@ -22,12 +22,12 @@ export const Wrapper = styled.div`
         .item__link {
           text-decoration: none;
           font-size: 1.1rem;
-
+          color: #53628D;
           display: inline-flex;
           align-items: center;
 
           :hover {
-            color: black;
+            color: #1E3F48;
             transform: scale(1.05);
             transition: all 0.4s ease;
           }

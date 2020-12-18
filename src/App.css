@@ -23,6 +23,8 @@
 @media (max-width: 1000px) {
   .app{
     transition: padding 0.4s ease;
-    padding: 6vh 3vw 0 3vw;
+    padding: 6vh 2vw 0 2vw;
+    overflow-x: hidden;
+  
   }
 }

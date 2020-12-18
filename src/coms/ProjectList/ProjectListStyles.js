@@ -80,7 +80,7 @@ export const ContentDiv = styled.div`
     transition: width 0.4s ease;
 
     a {
-      color: #59619b;
+      color: #436EB1;
       text-decoration: none;
       transition: all 0.4s ease;
       padding: 5px 12px;
@@ -110,6 +110,9 @@ export const ContentDiv = styled.div`
     }
   }
   @media (max-width: 380px) {
+    .title{
+      font-size: 1rem;
+    }
     .description {
       display: none;
     }
