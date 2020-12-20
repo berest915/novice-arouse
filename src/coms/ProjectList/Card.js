@@ -15,17 +15,24 @@ const Card = ({ card }) => {
 
   return (
     <Wrapper isRowReverse={isRowReverse}>
-      <ImageDiv className="each-w" isRowReverse={isRowReverse}>
+      <ImageDiv
+        className="each-w"
+        isRowReverse={isRowReverse}
+        data-aos={isRowReverse ? `fade-left` : `fade-right`}
+        data-aos-easing="ease-in-cubic"
+      >
         <img src={image} alt={alt} />
       </ImageDiv>
 
-      <ContentDiv className="each-w ">
+      <ContentDiv className="each-w " data-aos="flip-down"
+        data-aos-duration="1300"
+      >
         <p className="title">{title}</p>
         <p className="description">{p}</p>
         <h4 className="stack">{stack}</h4>
         <div className="card-link">
           <a target="_blank" href={demoUrl} rel="noopener noreferrer">
-            <i  className="link-icon fas fa-desktop" />
+            <i className="link-icon fas fa-desktop" />
             <span>Demo</span>
           </a>
           <a target="_blank" href={sourceUrl} rel="noopener noreferrer">

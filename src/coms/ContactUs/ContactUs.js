@@ -43,7 +43,8 @@ const ContactUs = () => {
       !input.from_name && setNameErrorBorder(true);
       !input.from_email && setEmailErrorBorder(true);
       !input.from_message && setMessageErrorBorder(true);
-    } else {
+    } 
+    else {
       setInput({
         from_name: "",
         from_email: "",
@@ -57,7 +58,7 @@ const ContactUs = () => {
           "template_2hz48mt",
           e.target,
           "user_Xg4G1M9ikFachf4iaOQ6Y",
-          // pass in additional custom-callback
+          // pass in additional custom-callback,
           setRecaptchaErrorBorder(),
           setCaptionText()
         )

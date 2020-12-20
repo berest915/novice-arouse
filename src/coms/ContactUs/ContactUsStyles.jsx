@@ -144,6 +144,7 @@ export const Wrapper = styled.div`
       .caption {
         font-family: "cabin", "san-serif";
         font-size: 12px;
+        height: 12px;
         color: gray;
         opacity: 0.8;
         text-align: center;

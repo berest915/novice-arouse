@@ -1,4 +1,3 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 
 import ProjectList from "./coms/ProjectList/ProjectList";
@@ -37,7 +36,6 @@ const App = () => {
         </div>
       </div>
       <Banner
-        textAlign="right"
         text="San Leow ©2020 All Rights Reserved."
       />
     </>

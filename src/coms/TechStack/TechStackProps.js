@@ -7,6 +7,7 @@ import {
   Auth0,
   Amazonaws,
   Typescript,
+  MaterialUi,
 } from "@styled-icons/simple-icons";
 import { NodeJs } from "@styled-icons/fa-brands";
 
@@ -22,6 +23,10 @@ export const currentTechStackProps = [
   {
     StackIcon: Firebase,
     stackName: "Firebase",
+  },
+  {
+    StackIcon: MaterialUi,
+    stackName: "Material-Ui",
   },
   {
     StackIcon: Github,
