@@ -152,7 +152,7 @@ export const Wrapper = styled.div`
       }
 
       .ifEmpty-recaptcha {
-        color: ${props => props.recaptchaErrorBorder && `orange`};
+        color: ${props => props.captionColor};
         transition: all 1s ease;
       }
     }
@@ -197,7 +197,7 @@ export const Wrapper = styled.div`
         }
 
         .send-btn {
-          margin-left: 0;
+          margin: inherit 0;
           font-size: 1rem;
           padding: 0;
         }
@@ -241,6 +241,11 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 410px) {
+    padding: 15px 0;
+    margin-bottom: 1rem;
+    .caption {
+      margin-bottom: 1rem;
+    }
     .g-recaptcha {
       transform: scale(0.6);
       -webkit-transform: scale(0.6);

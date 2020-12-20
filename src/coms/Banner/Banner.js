@@ -23,9 +23,13 @@ const Wrapper = styled.div`
   text-align: right;
   letter-spacing: 1px;
   @media (max-width: 500px) {
+    transition: all 0.4s ease;
     text-align: center;
   }
   @media (max-width: 460px) {
     font-size: 0.8rem;
+  }
+  @media (max-width: 400px) {
+    font-size: 0.7rem;
   }
 `;

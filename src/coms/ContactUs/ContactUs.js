@@ -12,7 +12,9 @@ const ContactUs = () => {
   const [nameErrorBorder, setNameErrorBorder] = useState(false);
   const [emailErrorBorder, setEmailErrorBorder] = useState(false);
   const [messageErrorBorder, setMessageErrorBorder] = useState(false);
-  const [recaptchaErrorBorder, setRecaptchaErrorBorder] = useState(false);
+
+  // const [recaptchaErrorBorder, setRecaptchaErrorBorder] = useState(false);
+  const [captionColor, setCaptionColor] = useState("")
 
   const [captionText, setCaptionText] = useState(
     "- - click on recaptcha before sending - -"
@@ -59,17 +61,18 @@ const ContactUs = () => {
           e.target,
           "user_Xg4G1M9ikFachf4iaOQ6Y",
           // pass in additional custom-callback,
-          setRecaptchaErrorBorder(),
-          setCaptionText()
+          setCaptionText(),
+          setCaptionColor(),
         )
         .then(
           result => {
-            setRecaptchaErrorBorder(false);
             console.log(result.text);
+            setCaptionColor("green")
+            setCaptionText("- - submit successfull - -")
           },
           error => {
-            setRecaptchaErrorBorder(true);
             console.log(error.text);
+            setCaptionColor("orange")
             error.text === "timeout-or-duplicate" && setCaptionText("wait 1 minute before resending");
             error.text === "The g-recaptcha-response parameter not found" &&
               setCaptionText("- - click on recaptcha before sending - -");
@@ -84,7 +87,8 @@ const ContactUs = () => {
         nameErrorBorder={nameErrorBorder}
         emailErrorBorder={emailErrorBorder}
         messageErrorBorder={messageErrorBorder}
-        recaptchaErrorBorder={recaptchaErrorBorder}
+        // recaptchaErrorBorder={recaptchaErrorBorder}
+        captionColor={captionColor}
       >
         <h1>
           Contact Me
