@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import coverImg from "../../img/cover-img.jpg";
+import coverImg from "../../img/cover-img-min.jpg";
 
 const CoverImage = () => {
   return (
