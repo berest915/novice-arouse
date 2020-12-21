@@ -60,10 +60,10 @@ const ContactUs = () => {
       // 1 minute window on expired-or-duplicated validation
       emailjs
         .sendForm(
-          "service_ot987ky",
-          "template_2hz48mt",
+          process.env.REACT_APP_EMAILJS_SERVICE_ID,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
           e.target,
-          "user_Xg4G1M9ikFachf4iaOQ6Y",
+          process.env.REACT_APP_EMAILJS_USER_ID,
           // pass in additional custom-callback,
           setCaptionText(),
           setCaptionColor(),
