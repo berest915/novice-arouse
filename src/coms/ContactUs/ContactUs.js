@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { Wrapper } from "./ContactUsStyles";
 import emailjs from "emailjs-com";
 import Button from "@material-ui/core/Button";
+
+
 const ContactUs = () => {
+  
   const [input, setInput] = useState({
     from_name: "",
     from_email: "",
@@ -14,11 +17,13 @@ const ContactUs = () => {
   const [messageErrorBorder, setMessageErrorBorder] = useState(false);
 
   // const [recaptchaErrorBorder, setRecaptchaErrorBorder] = useState(false);
-  const [captionColor, setCaptionColor] = useState("")
+  const [captionColor, setCaptionColor] = useState("");
 
   const [captionText, setCaptionText] = useState(
     "- - click on recaptcha before sending - -"
   );
+
+  
 
   const handleOnChange = e => {
     setInput({
@@ -45,8 +50,7 @@ const ContactUs = () => {
       !input.from_name && setNameErrorBorder(true);
       !input.from_email && setEmailErrorBorder(true);
       !input.from_message && setMessageErrorBorder(true);
-    } 
-    else {
+    } else {
       setInput({
         from_name: "",
         from_email: "",
@@ -67,13 +71,14 @@ const ContactUs = () => {
         .then(
           result => {
             console.log(result.text);
-            setCaptionColor("green")
-            setCaptionText("- - submit successfull - -")
+            setCaptionColor("green");
+            setCaptionText("- - submit successful - -");
           },
           error => {
             console.log(error.text);
-            setCaptionColor("orange")
-            error.text === "timeout-or-duplicate" && setCaptionText("wait 1 minute before resending");
+            setCaptionColor("orange");
+            error.text === "timeout-or-duplicate" &&
+              setCaptionText("wait 1 minute before resending");
             error.text === "The g-recaptcha-response parameter not found" &&
               setCaptionText("- - click on recaptcha before sending - -");
           }
@@ -138,7 +143,7 @@ const ContactUs = () => {
             <div className="recaptcha-container">
               <div
                 className="g-recaptcha"
-                data-sitekey="6LcdiQYaAAAAAJM56lJqJ1KBjRkbxezFi7Pz2F-a"
+                data-sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY}
               />
             </div>
             <div className="caption ifEmpty-recaptcha">{captionText}</div>
@@ -146,6 +151,7 @@ const ContactUs = () => {
               <i className="far fa-paper-plane" />
               Send
             </Button>
+         
           </div>
         </form>
       </Wrapper>

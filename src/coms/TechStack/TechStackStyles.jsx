@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { GFont_Cabin_600 } from "../../css-constants/css-constants"
 
 export const Wrapper = styled.div`
   margin: 6rem 0;
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
-  font-family: "Cabin", sans-serif;
+  ${GFont_Cabin_600};
   .title {
     font-size: 2rem;
     text-align: center;

@@ -1,10 +1,12 @@
 import styled from "styled-components";
+import { GFont_Cabin_600 } from "../../css-constants/css-constants";
 
 export const Wrapper = styled.div`
   transition: all 0.4s ease;
   .msg {
-    padding:  5% ;transition: all 0.4s ease;
-    font-family: "Cabin", sans-serif;
+    padding: 5%;
+    transition: all 0.4s ease;
+    ${GFont_Cabin_600};
     font-size: 3rem;
     line-height: 3rem;
     letter-spacing: 2px;
@@ -24,7 +26,7 @@ export const Wrapper = styled.div`
       font-size: 2.3rem;
       line-height: 2.3rem;
       transition: all 0.4s ease;
-      p{
+      p {
         margin-bottom: 0.5rem;
       }
     }
@@ -46,14 +48,13 @@ export const Wrapper = styled.div`
     }
   }
 
-  @media (max-width: 450px){
-    .msg{
+  @media (max-width: 450px) {
+    .msg {
       padding: 2rem 5%;
       font-size: 1.1rem;
-      p{
+      p {
         margin-bottom: 0;
       }
     }
   }
-
 `;

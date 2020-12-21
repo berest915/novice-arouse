@@ -10,13 +10,13 @@ import LogoText from "./coms/LogoText/LogoText";
 import HeaderLinks from "./coms/HeaderLinks/HeaderLinks";
 import MainMessage from "./coms/MainMessage/MainMessage";
 import CoverImage from "./coms/CoverImage/CoverImage";
+import ContactUs from "./coms/ContactUs/ContactUs";
 import Banner from "./coms/Banner/Banner";
-import ContactUs from "./coms/ContactUs/ContactUs"
 
 const App = () => {
   return (
     <>
-      <div className='app'>
+      <div className="app">
         <div className="app__body">
           <LogoText />
           <HeaderLinks />
@@ -32,12 +32,9 @@ const App = () => {
             techStackProps={furtherTechStackProps}
           />
           <ContactUs />
-         
         </div>
       </div>
-      <Banner
-        text="San Leow ©2020 All Rights Reserved."
-      />
+      <Banner text="San Leow ©2020 All Rights Reserved." />
     </>
   );
 };

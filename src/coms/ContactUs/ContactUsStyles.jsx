@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { GFont_Cabin_600 } from "../../css-constants/css-constants"
 
 export const Wrapper = styled.div`
   background-color: rgba(194, 223, 255, 0.2);
@@ -12,7 +13,7 @@ export const Wrapper = styled.div`
   -moz-box-shadow: 0px 0px 98px -30px rgba(194, 223, 255, 1) inset;
 
   h1 {
-    font-family: "cabin", "san-serif";
+    ${GFont_Cabin_600};
     margin-bottom: 1.5rem;
     text-align: center;
     color: #3f4d64;
@@ -41,12 +42,12 @@ export const Wrapper = styled.div`
       label {
         margin: 5px 8px;
         width: 15%;
-        font-family: "cabin", "san-serif";
+        ${GFont_Cabin_600};
       }
 
       input,
       textarea {
-        font-family: "cabin", "san-serif";
+        ${GFont_Cabin_600};
         background-color: rgba(194, 223, 255, 0.6);
 
         margin: 5px 8px;
@@ -120,7 +121,7 @@ export const Wrapper = styled.div`
         background-color: rgba(142, 213, 205);
 
         color: #42618a;
-        font-family: "cabin", "san-serif";
+        ${GFont_Cabin_600};
         border: 1px solid rgba(194, 223, 255, 0.4);
         border-radius: 1rem;
         font-size: 1.2rem;
@@ -142,7 +143,7 @@ export const Wrapper = styled.div`
       }
 
       .caption {
-        font-family: "cabin", "san-serif";
+        ${GFont_Cabin_600};
         font-size: 12px;
         height: 12px;
         color: gray;

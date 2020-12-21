@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {GFont_Cabin_600  } from "../../css-constants/css-constants"
 
 const Banner = ({ text }) => {
   return (
@@ -16,7 +17,7 @@ export default Banner;
 const Wrapper = styled.div`
   color: rgba(0, 0, 0, 0.9);
   background-color: #e0fbfc;
-  font-family: "Cabin", sans-serif;
+  ${GFont_Cabin_600};
   padding: 0.9rem;
   font-size: 0.9rem;
   opacity: 0.7;

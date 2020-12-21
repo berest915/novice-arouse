@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { GFont_JetBrains_Mono_500_800 } from "../../css-constants/css-constants"
 
 const LogoText = () => {
   return (
@@ -18,7 +19,7 @@ export default LogoText;
 
 const Wrapper = styled.div`
   .logo-text {
-    font-family: "JetBrains Mono", monospace;
+    ${GFont_JetBrains_Mono_500_800};
     font-weight: 800;
     margin-bottom: 3rem;
   }

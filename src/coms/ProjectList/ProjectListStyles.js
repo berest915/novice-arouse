@@ -1,10 +1,5 @@
 import styled, { css } from "styled-components";
-
-const CARD_BG = {
-  BG_DARKER: "rgba(211,211,211, 0.8)",
-  BG_LIGHTER: "rgba(211,211,211, 0.3)",
-  CARD_BG_ONE: "#F0F0F6",
-};
+import { GFont_Cabin_600 } from "../../css-constants/css-constants"
 
 //! css
 const leftBoxShadow = css`

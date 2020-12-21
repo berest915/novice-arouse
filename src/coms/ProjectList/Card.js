@@ -24,8 +24,8 @@ const Card = ({ card }) => {
         <img src={image} alt={alt} />
       </ImageDiv>
 
-      <ContentDiv className="each-w " data-aos="flip-down"
-        data-aos-duration="1300"
+      <ContentDiv className="each-w " data-aos="zoom-in-down"
+        data-aos-duration="700"
       >
         <p className="title">{title}</p>
         <p className="description">{p}</p>
