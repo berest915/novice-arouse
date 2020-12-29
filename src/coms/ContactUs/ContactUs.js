@@ -97,7 +97,7 @@ const ContactUs = () => {
         captionColor={captionColor}
       >
         <h1>
-          Contact Me
+          {t("contactUs.title")}
           <i className="fas fa-mobile-alt" />
         </h1>
         <form className="contact-form" onSubmit={sendEmail}>
@@ -106,10 +106,10 @@ const ContactUs = () => {
           </div>
 
           <div className="eachInput">
-            <label>Name :</label>
+            <label>{t("contactUs.nameLabel")}</label>
             <input
               className="ifEmpty-name"
-              placeholder="How should I address you ?"
+              placeholder={t("contactUs.namePlaceholder")}
               type="text"
               name="from_name"
               value={input.from_name}
@@ -118,10 +118,10 @@ const ContactUs = () => {
           </div>
 
           <div className="eachInput">
-            <label>Email :</label>
+            <label>{t("contactUs.emailLabel")}</label>
             <input
               className="ifEmpty-email"
-              placeholder="Kindly provide your email."
+              placeholder={t("contactUs.emailPlaceholder")}
               type="email"
               name="from_email"
               value={input.from_email}
@@ -130,10 +130,10 @@ const ContactUs = () => {
           </div>
           
           <div className="eachInput">
-            <label>Message :</label>
+            <label>{t("contactUs.messageLabel")}</label>
             <textarea
               className="ifEmpty-message"
-              placeholder="Enter your message here."
+              placeholder={t("contactUs.messagePlaceholder")}
               name="from_message"
               value={input.from_message}
               onChange={handleOnChange}
@@ -150,7 +150,7 @@ const ContactUs = () => {
             <div className="caption ifEmpty-recaptcha">{captionText}</div>
             <Button className="send-btn" type="submit">
               <i className="far fa-paper-plane" />
-              Send
+              {t("contactUs.sendButton")}
             </Button>
          
           </div>

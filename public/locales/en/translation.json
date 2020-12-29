@@ -1,8 +1,29 @@
 {
-  "Thanks": {
-      "1": "Thank you"
+  "repo": "repo",
+  "resume": "resume",
+
+  "mainMessage": {
+    "1": "Hey there, I'm ",
+    "2": "San.",
+    "3": "Frontend React",
+    "4": " Developer,",
+    "5": "Novice but ",
+    "6": "Notable."
   },
-  "Why": {
-      "1": "For watching this video"
+
+  "techStack": {
+    "current": "My Current Tech Stack",
+    "further": "My Further Tech Stack"
+  },
+
+  "contactUs": {
+    "title": "Contact Me",
+    "nameLabel": "Name :",
+    "emailLabel": "Email :",
+    "messageLabel": "Message :",
+    "namePlaceholder": "How should I address you ?",
+    "emailPlaceholder": "Kindly provide your email.",
+    "messagePlaceholder": "Enter your message here.",
+    "sendButton": "Send"
   }
 }

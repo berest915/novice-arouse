@@ -1,8 +1,27 @@
 {
-  "Thanks": {
-      "1": "感谢您"
+  "repo": "储存库",
+  "resume": "履历",
+  "mainMessage": {
+    "1": "您好，您可以叫我",
+    "2": " 山。",
+    "3": "网页前端开发 - React",
+    "4": " 运用者，",
+    "5": "自学式新手 不过您 ",
+    "6": "值得一览。"
   },
-  "Why": {
-      "1": "收看此视频"
+  "techStack": {
+    "current": "我的现役科技线",
+    "further": "我的未役科技线"
+  },
+
+  "contactUs": {
+    "title": "联络我",
+    "nameLabel": "姓名 :",
+    "emailLabel": "邮址 :",
+    "messageLabel": "信息 :",
+    "namePlaceholder": "该怎么称呼您 ？",
+    "emailPlaceholder": "请提供你的邮址。",
+    "messagePlaceholder": "在此写入信息。",
+    "sendButton": "发送"
   }
 }

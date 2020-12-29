@@ -21,6 +21,12 @@ export const Wrapper = styled.div`
   align-items: center;
   ${props => props.isRowReverse && "flex-direction: row-reverse"};
 
+  .mainTitle {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
   .each-w {
     width: 48%;
   }

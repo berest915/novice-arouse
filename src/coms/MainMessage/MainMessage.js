@@ -1,19 +1,25 @@
 import React from "react";
 import { Wrapper } from "./MainMessageStyles";
+import { useTranslation } from "react-i18next";
 
 const MainMessage = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Wrapper>
         <div className="msg">
           <p>
-            Hey there, I'm <span>San.</span>
+            {t("mainMessage.1")}
+            <span>{t("mainMessage.2")}</span>
           </p>
           <p>
-            <span>Frontend React</span> Developer,
+            <span>{t("mainMessage.3")}</span>
+            {t("mainMessage.4")}
           </p>
           <p>
-            Novice but <span>Notable.</span>
+            {t("mainMessage.5")}
+            <span>{t("mainMessage.6")}</span>
           </p>
         </div>
       </Wrapper>
