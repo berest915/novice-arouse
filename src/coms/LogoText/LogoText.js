@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   .logo-text {
     ${GFont_JetBrains_Mono_500_800};
     font-weight: 800;
+    color: var(--LogoText-font-color);
     margin-bottom: 3rem;
   }
 `;

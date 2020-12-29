@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
-import { GFont_Cabin_600 } from "../../css-constants/css-constants"
 
-//! css
+// css
 const leftBoxShadow = css`
   -webkit-box-shadow: -12px -4px 36px -8px rgba(112, 100, 112, 0.55);
   -moz-box-shadow: -12px -4px 36px -8px rgba(112, 100, 112, 0.55);
@@ -14,7 +13,7 @@ const rightBoxShadow = css`
   box-shadow: 12px 4px 36px -8px rgba(112, 100, 112, 0.55);
 `;
 
-//! styled
+// styled
 export const Wrapper = styled.div`
   padding: 2rem;
   display: flex;
@@ -75,7 +74,7 @@ export const ContentDiv = styled.div`
     transition: width 0.4s ease;
 
     a {
-      color: #436EB1;
+      color: #436eb1;
       text-decoration: none;
       transition: all 0.4s ease;
       padding: 5px 12px;
@@ -105,7 +104,7 @@ export const ContentDiv = styled.div`
     }
   }
   @media (max-width: 380px) {
-    .title{
+    .title {
       font-size: 1rem;
     }
     .description {
@@ -115,7 +114,7 @@ export const ContentDiv = styled.div`
     .card-link {
       flex-direction: column;
       text-align: center;
-      
+
       a {
         margin: 0.5rem 0;
         padding: 0.5rem 1rem;

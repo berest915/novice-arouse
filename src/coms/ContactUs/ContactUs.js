@@ -3,9 +3,10 @@ import { Wrapper } from "./ContactUsStyles";
 import emailjs from "emailjs-com";
 import Button from "@material-ui/core/Button";
 
+import { useTranslation } from 'react-i18next';
 
 const ContactUs = () => {
-  
+  const { t } = useTranslation();
   const [input, setInput] = useState({
     from_name: "",
     from_email: "",
@@ -121,13 +122,13 @@ const ContactUs = () => {
             <input
               className="ifEmpty-email"
               placeholder="Kindly provide your email."
-              // type="email"
+              type="email"
               name="from_email"
               value={input.from_email}
               onChange={handleOnChange}
             />
           </div>
-
+          
           <div className="eachInput">
             <label>Message :</label>
             <textarea
