@@ -14,8 +14,7 @@ import ContactUs from "./coms/ContactUs/ContactUs";
 import Banner from "./coms/Banner/Banner";
 
 import { useTranslation } from 'react-i18next';
-import Button from '@material-ui/core/Button'
-import i18next from 'i18next'
+
 
 const App = () => {
   const { t } = useTranslation();
@@ -23,8 +22,7 @@ const App = () => {
     <>
       <div className="app">
         <div className="app__body">
-          <Button onClick={() => i18next.changeLanguage('en')}>English</Button>
-          <Button onClick={() => i18next.changeLanguage('chi')}>Chinese</Button>
+       
           <LogoText />
           <HeaderLinks />
           <MainMessage />

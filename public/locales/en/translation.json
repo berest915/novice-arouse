@@ -1,6 +1,8 @@
 {
   "repo": "repo",
   "resume": "resume",
+  "english": "ENG",
+  "chinese": "CN",
 
   "mainMessage": {
     "1": "Hey there, I'm ",
@@ -14,6 +16,11 @@
   "techStack": {
     "current": "My Current Tech Stack",
     "further": "My Further Tech Stack"
+  },
+
+  "projectList": {
+    "demo": "Demo",
+    "source": "Source"
   },
 
   "contactUs": {

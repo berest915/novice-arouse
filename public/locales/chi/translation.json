@@ -1,6 +1,9 @@
 {
   "repo": "储存库",
   "resume": "履历",
+  "english": "英文",
+  "chinese": "中文",
+
   "mainMessage": {
     "1": "您好，您可以叫我",
     "2": " 山。",
@@ -9,9 +12,15 @@
     "5": "自学式新手 不过您 ",
     "6": "值得一览。"
   },
+
   "techStack": {
     "current": "我的现役科技线",
     "further": "我的未役科技线"
+  },
+
+  "projectList": {
+    "demo": "自行试用",
+    "source": "代码储库"
   },
 
   "contactUs": {

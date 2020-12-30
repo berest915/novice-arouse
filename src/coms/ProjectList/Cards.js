@@ -2,7 +2,6 @@ import portfolio from '../../img/portfolio.png';
 import wsInfoClone from '../../img/ws-info-clone.png';
 import woocel from '../../img/woocel.png';
 
-
 export const Cards = [
   {
     image: portfolio,

@@ -1,7 +1,9 @@
 import React from "react";
 import { Wrapper, ImageDiv, ContentDiv } from "./ProjectListStyles";
+import { useTranslation } from 'react-i18next';
 
 const Card = ({ card }) => {
+  const { t } = useTranslation()
   const {
     image,
     alt,
@@ -33,11 +35,11 @@ const Card = ({ card }) => {
         <div className="card-link">
           <a target="_blank" href={demoUrl} rel="noopener noreferrer">
             <i className="link-icon fas fa-desktop" />
-            <span>Demo</span>
+            <span>{t("projectList.demo")}</span>
           </a>
           <a target="_blank" href={sourceUrl} rel="noopener noreferrer">
             <i className="link-icon fab fa-github" />
-            <span>Source</span>
+            <span>{t("projectList.source")}</span>
           </a>
         </div>
       </ContentDiv>
