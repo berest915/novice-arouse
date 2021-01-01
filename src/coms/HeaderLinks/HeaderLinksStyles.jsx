@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { GFont_MaShanZheng } from "../../css-constants/css-constants";
 
 export const Wrapper = styled.div`
   .dir {
@@ -30,6 +31,10 @@ export const Wrapper = styled.div`
             color: #1e3f48;
             transform: scale(1.05);
             transition: all 0.4s ease;
+          }
+          .item__text {
+            ${props => props.currentLanguage === "chi" && GFont_MaShanZheng}
+            ${props => props.currentLanguage === "chi" && `font-weight: 600`}
           }
         }
 

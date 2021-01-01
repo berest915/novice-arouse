@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { GFont_Cabin_600 } from "../../css-constants/css-constants";
+import {
+  GFont_Cabin_600,
+  GFont_MaShanZheng,
+} from "../../css-constants/css-constants";
 
 export const Wrapper = styled.div`
   transition: all 0.4s ease;
@@ -19,6 +22,10 @@ export const Wrapper = styled.div`
         color: rgba(80, 80, 110, 0.7);
       }
     }
+  }
+
+  .chi-lang {
+    ${GFont_MaShanZheng};
   }
 
   @media (max-width: 900px) {

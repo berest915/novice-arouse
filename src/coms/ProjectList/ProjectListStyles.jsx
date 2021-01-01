@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-
+import {GFont_MaShanZheng} from "../../css-constants/css-constants"
 // css
 const leftBoxShadow = css`
   -webkit-box-shadow: -12px -4px 36px -8px rgba(112, 100, 112, 0.55);
@@ -20,6 +20,7 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   ${props => props.isRowReverse && "flex-direction: row-reverse"};
+  
 
   .mainTitle {
     font-size: 2rem;
@@ -76,14 +77,15 @@ export const ContentDiv = styled.div`
   .card-link {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 80%;
     transition: width 0.4s ease;
+    ${props => props.currentLanguage === 'chi' && GFont_MaShanZheng}
 
     a {
       color: #436eb1;
       text-decoration: none;
       transition: all 0.4s ease;
-      padding: 5px 12px;
+      padding: 8px 12px;
       .link-icon {
         margin-right: 8px;
       }
@@ -94,25 +96,29 @@ export const ContentDiv = styled.div`
     }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 570px) {
     .card-link {
-      width: 70%;
+      width: 80%;
     }
   }
+
   @media (max-width: 460px) {
     .title {
       transition: font-size 0.4s ease;
       font-size: 1.2rem;
       text-align: center;
     }
+
     .card-link {
       width: 100%;
     }
   }
-  @media (max-width: 380px) {
+
+  @media (max-width: 390px) {
     .title {
       font-size: 1rem;
     }
+    
     .description {
       display: none;
     }

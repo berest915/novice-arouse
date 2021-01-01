@@ -6,7 +6,7 @@ const CoverImage = () => {
   return (
     <>
       <Wrapper>
-        <img src={coverImg} className="cover__img" />
+        <img src={coverImg} alt='cover' className="cover__img" />
       </Wrapper>
     </>
   );

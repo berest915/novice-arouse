@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Wrapper, ImageDiv, ContentDiv } from "./ProjectListStyles";
 import { useTranslation } from 'react-i18next';
-
+import fontContext from "../../context/fontContext"
 const Card = ({ card }) => {
   const { t } = useTranslation()
+  const {currentLanguage} = useContext(fontContext)
+
   const {
     image,
     alt,
@@ -16,7 +18,7 @@ const Card = ({ card }) => {
   } = card;
 
   return (
-    <Wrapper isRowReverse={isRowReverse}>
+    <Wrapper isRowReverse={isRowReverse} >
       <ImageDiv
         className="each-w"
         isRowReverse={isRowReverse}
@@ -28,6 +30,7 @@ const Card = ({ card }) => {
 
       <ContentDiv className="each-w " data-aos="zoom-in-down"
         data-aos-duration="700"
+        currentLanguage={currentLanguage}
       >
         <p className="title">{title}</p>
         <p className="description">{p}</p>

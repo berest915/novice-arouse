@@ -14,8 +14,8 @@
   },
 
   "techStack": {
-    "current": "我的现役科技线",
-    "further": "我的未役科技线"
+    "current": "近期使用科技线",
+    "further": "往后延伸科技线"
   },
 
   "projectList": {

@@ -1,4 +1,5 @@
 import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import ProjectList from "./coms/ProjectList/ProjectList";
 import TechStack from "./coms/TechStack/TechStack";
@@ -12,34 +13,43 @@ import MainMessage from "./coms/MainMessage/MainMessage";
 import CoverImage from "./coms/CoverImage/CoverImage";
 import ContactUs from "./coms/ContactUs/ContactUs";
 import Banner from "./coms/Banner/Banner";
+import NotExist from "./coms/NotExist/NotExist";
 
-import { useTranslation } from 'react-i18next';
-
+import { useTranslation } from "react-i18next";
+import FontState from "./context/FontState";
 
 const App = () => {
   const { t } = useTranslation();
   return (
     <>
-      <div className="app">
-        <div className="app__body">
-       
-          <LogoText />
-          <HeaderLinks />
-          <MainMessage />
-          <CoverImage />
-          <TechStack
-            title={t("techStack.current")}
-            techStackProps={currentTechStackProps}
-          />
-          <ProjectList />
-          <TechStack
-              title={t("techStack.further")}
-            techStackProps={furtherTechStackProps}
-          />
-          <ContactUs />
-        </div>
-      </div>
-      <Banner text="San Leow ©2020 All Rights Reserved." />
+      <FontState>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <div className="app">
+                <div className="app__body">
+                  <LogoText />
+                  <HeaderLinks />
+                  <MainMessage />
+                  <CoverImage />
+                  <TechStack
+                    title={t("techStack.current")}
+                    techStackProps={currentTechStackProps}
+                  />
+                  <ProjectList />
+                  <TechStack
+                    title={t("techStack.further")}
+                    techStackProps={furtherTechStackProps}
+                  />
+                  <ContactUs />
+                </div>
+              </div>
+            </Route>
+            <Route component={NotExist} />
+            <Banner text="San Leow ©2020 All Rights Reserved." />
+          </Switch>
+        </Router>
+      </FontState>
     </>
   );
 };

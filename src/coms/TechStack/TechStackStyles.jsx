@@ -1,8 +1,11 @@
 import styled from "styled-components";
-import { GFont_Cabin_600 } from "../../css-constants/css-constants"
+import { GFont_Cabin_600 } from "../../css-constants/css-constants";
 
 export const Wrapper = styled.div`
-  margin: 6rem 0;
+  margin: 6rem auto;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
@@ -10,7 +13,7 @@ export const Wrapper = styled.div`
   .title {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 
   .stacks {
@@ -23,7 +26,6 @@ export const Wrapper = styled.div`
       flex-direction: column;
       align-items: center;
       margin: 20px 40px;
-
 
       .styled-icons {
         height: 5rem;
@@ -39,13 +41,12 @@ export const Wrapper = styled.div`
       margin-bottom: 2rem;
     }
     .stacks > .stack {
-        padding: 0;
-        width: 40%;
-        height: 100%;
-        margin: 10px;
-      }
+      padding: 0;
+      width: 40%;
+      height: 100%;
+      margin: 10px;
     }
-  
+  }
 
   @media (max-width: 500px) {
     .title {
@@ -63,7 +64,8 @@ export const Wrapper = styled.div`
   }
 
   @media (max-width: 380px) {
-    .title{
+    width: 100%;
+    .title {
       font-size: 1.2rem;
     }
   }

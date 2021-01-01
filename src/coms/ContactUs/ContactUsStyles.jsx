@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { GFont_Cabin_600 } from "../../css-constants/css-constants"
+import {
+  GFont_Cabin_600,
+  GFont_MaShanZheng,
+} from "../../css-constants/css-constants";
 
 export const Wrapper = styled.div`
   background-color: rgba(194, 223, 255, 0.2);
@@ -47,9 +50,7 @@ export const Wrapper = styled.div`
 
       input,
       textarea {
-        ${GFont_Cabin_600};
         background-color: rgba(194, 223, 255, 0.6);
-
         margin: 5px 8px;
         outline: none;
         width: 80%;
@@ -119,15 +120,15 @@ export const Wrapper = styled.div`
 
       .send-btn {
         background-color: rgba(142, 213, 205);
-
         color: #42618a;
-        ${GFont_Cabin_600};
         border: 1px solid rgba(194, 223, 255, 0.4);
         border-radius: 1rem;
         font-size: 1.2rem;
         text-transform: uppercase;
         margin: 0.5rem 1rem;
         transition: all 0.4s ease;
+        ${props =>
+          props.currentLanguage === "chi" ? GFont_MaShanZheng : GFont_Cabin_600}
 
         i {
           margin-right: 1rem;

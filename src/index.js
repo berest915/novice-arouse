@@ -4,10 +4,11 @@ import "./index.css";
 import App from "./App";
 import "./i18n";
 import reportWebVitals from "./reportWebVitals";
+import Loading from "./coms/Loading/Loading";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback="loading">
+    <Suspense fallback={<Loading />}>
       <App />
     </Suspense>
   </React.StrictMode>,
