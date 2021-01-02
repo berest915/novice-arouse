@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Wrapper } from "./HeaderLinksStyles";
 import { useTranslation } from "react-i18next";
 import fontContext from "../../context/fontContext";
-
+import resume from "../../pdf/kwsp-17a.pdf"
 const HeaderLinks = () => {
   const { t } = useTranslation();
   const { currentLanguage, setCurrentLanguage } = useContext(fontContext);
@@ -34,7 +34,7 @@ const HeaderLinks = () => {
             </div>
             <div className="item">
               <a
-                href="https://github.com/berest915"
+                href={resume}
                 target="_blank"
                 rel="noreferrer"
                 className="item__link"

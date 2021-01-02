@@ -44,9 +44,9 @@ const App = () => {
                   <ContactUs />
                 </div>
               </div>
+              <Banner text="San Leow ©2020 All Rights Reserved." />
             </Route>
             <Route component={NotExist} />
-            <Banner text="San Leow ©2020 All Rights Reserved." />
           </Switch>
         </Router>
       </FontState>
