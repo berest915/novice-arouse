@@ -7,6 +7,7 @@ import {
   currentTechStackProps,
   furtherTechStackProps,
 } from "./coms/TechStack/TechStackProps";
+
 import LogoText from "./coms/LogoText/LogoText";
 import HeaderLinks from "./coms/HeaderLinks/HeaderLinks";
 import MainMessage from "./coms/MainMessage/MainMessage";
