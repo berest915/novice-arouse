@@ -1,0 +1,36 @@
+{
+  "repo": "repo",
+  "resume": "resume",
+  "english": "ENG",
+  "chinese": "CN",
+
+  "mainMessage": {
+    "1": "Hey there, I'm ",
+    "2": "San.",
+    "3": "Frontend React",
+    "4": " Developer,",
+    "5": "Novice but ",
+    "6": "Notable."
+  },
+
+  "techStack": {
+    "current": "Recent Tech Stack",
+    "further": "Further Tech Stack"
+  },
+
+  "projectList": {
+    "demo": "Demo",
+    "source": "Source"
+  },
+
+  "contactUs": {
+    "title": "Contact Me",
+    "nameLabel": "Name :",
+    "emailLabel": "Email :",
+    "messageLabel": "Message :",
+    "namePlaceholder": "How should I address you ?",
+    "emailPlaceholder": "Kindly provide your email.",
+    "messagePlaceholder": "Enter your message here.",
+    "sendButton": "Send"
+  }
+}
