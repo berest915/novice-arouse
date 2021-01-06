@@ -9,7 +9,7 @@ export const Cards = [
     title: 'Portfolio',
     p: `[P1] So the, I'm a self-taught frontend developer and very likely with the insufficient professional development experience. Thus I do believe a clean & decent looking of portfolio would help me on seeking greater chance to be hired by those great companies out there. As my main focus on ReactJS, this site is built using ReactJS and Styled-Components.`,
     stack: '# React # Material-Ui # Styled-Components # Github',
-    demoUrl: 'https://berest915.github.io/novice-arouse/',
+    demoUrl: 'https://novice-arouse.netlify.app/',
     sourceUrl: 'https://github.com/berest915/novice-arouse/',
     isRowReverse: false,
   },
