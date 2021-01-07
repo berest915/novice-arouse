@@ -33,7 +33,11 @@ novice-arouse
 ├── .gitignore
 ├── .env (excluded from repo)
 └── src
-    ├── App.css
+    ├── coms
+    ├── context
+    ├── css-constants
+    ├── img
+    ├── pdf
     ├── App.js
     ├── i18n.jsx
     ├── index.css
