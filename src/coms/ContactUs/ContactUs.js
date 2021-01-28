@@ -42,8 +42,8 @@ const ContactUs = () => {
         default:
           return ``;
       }
-    }else{
-      switch(e.target.name){
+    } else {
+      switch (e.target.name) {
         case "from_name":
           return setNameErrorBorder(true);
         case "from_email":
@@ -158,11 +158,6 @@ const ContactUs = () => {
 
           <div className="submit-criteria">
             <div className="recaptcha-container">
-              {/* <div
-                className="g-recaptcha"
-                // data-sitekey="6LcdiQYaAAAAAJM56lJqJ1KBjRkbxezFi7Pz2F-a"
-                data-sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY}
-              /> */}
               <ReCAPTCHA
                 className="g-recaptcha"
                 sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY}
